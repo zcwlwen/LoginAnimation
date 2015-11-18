@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="yzp-0v-cXP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bubble1" translatesAutoresizingMaskIntoConstraints="NO" id="frg-pT-Avf">
+                                <rect key="frame" x="119" y="444" width="196" height="202"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bubble3" translatesAutoresizingMaskIntoConstraints="NO" id="KEZ-bX-JXC">
+                                <rect key="frame" x="-15" y="143" width="156" height="156"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bubble4" translatesAutoresizingMaskIntoConstraints="NO" id="Cr3-F1-d2d">
+                                <rect key="frame" x="159" y="1" width="253" height="253"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bubble5" translatesAutoresizingMaskIntoConstraints="NO" id="md5-Fg-uCF">
+                                <rect key="frame" x="25" y="307" width="174" height="157"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bubble2" translatesAutoresizingMaskIntoConstraints="NO" id="h6S-3b-HLg">
+                                <rect key="frame" x="-15" y="422" width="170" height="174"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bubble5" translatesAutoresizingMaskIntoConstraints="NO" id="jLv-cb-sfy">
+                                <rect key="frame" x="73" y="-33" width="174" height="157"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Oval 11" translatesAutoresizingMaskIntoConstraints="NO" id="yOo-Za-GhT">
+                                <rect key="frame" x="89" y="115" width="6" height="6"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="AnimationHub" translatesAutoresizingMaskIntoConstraints="NO" id="73p-8i-d7f">
+                                <rect key="frame" x="32" y="120" width="257" height="30"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bubble1" destination="jLv-cb-sfy" id="BbE-B0-yid"/>
+                        <outlet property="bubble2" destination="KEZ-bX-JXC" id="Q5N-rV-4q5"/>
+                        <outlet property="bubble3" destination="Cr3-F1-d2d" id="vk2-rS-RaP"/>
+                        <outlet property="bubble4" destination="h6S-3b-HLg" id="big-le-bHs"/>
+                        <outlet property="bubble5" destination="frg-pT-Avf" id="txJ-D8-cYV"/>
+                        <outlet property="bubble6" destination="md5-Fg-uCF" id="rNo-LS-WmE"/>
+                        <outlet property="logo" destination="73p-8i-d7f" id="o06-nX-TwJ"/>
+                        <outlet property="logoocal" destination="yOo-Za-GhT" id="HfI-fy-bfv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="399"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AnimationHub" width="257" height="30"/>
+        <image name="Background" width="320" height="568"/>
+        <image name="Oval 11" width="6" height="6"/>
+        <image name="bubble1" width="196" height="202"/>
+        <image name="bubble2" width="170" height="174"/>
+        <image name="bubble3" width="156" height="156"/>
+        <image name="bubble4" width="205" height="253"/>
+        <image name="bubble5" width="174" height="157"/>
+    </resources>
+</document>
