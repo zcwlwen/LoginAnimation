@@ -20,6 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoocal: UIImageView!
     
+    @IBOutlet weak var user: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var button: UIButton!
+    
+    
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    let warningMessage = UIImageView(image: UIImage(named: "warning"))
+    var loginPosition = CGPoint.zero
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +47,25 @@ class ViewController: UIViewController {
         self.bubble5.transform = CGAffineTransformMakeScale(0.5, 0.5)
         self.bubble6.transform = CGAffineTransformMakeScale(0.5, 0.5)
         
+        
+        
+        let userPaddingViewFor = UIView(frame: CGRectMake(0, 0, 55, self.user.frame.height))
+        self.user.leftView = userPaddingViewFor
+        self.user.leftViewMode = .Always
+
+        let passwordPaddingViewFor = UIView(frame: CGRectMake(0, 0, 55, self.user.frame.height))
+        self.password.leftView = passwordPaddingViewFor
+        self.password.leftViewMode = .Always
+        
+        
+        let userImageView = UIImageView(image: UIImage(named: "username"))
+        userImageView.frame.origin = CGPoint(x: 27, y: 6)
+        self.user.addSubview(userImageView)
+        
+        let passwordImageView = UIImageView(image: UIImage(named: "password"))
+        passwordImageView.frame.origin = CGPoint(x: 25, y: 5)
+        self.password.addSubview(passwordImageView)
+
         //初始化logo
 //        print(self.logo.center.x)
 //        print(self.logoocal.center.x)
@@ -47,6 +75,13 @@ class ViewController: UIViewController {
 //        
 //        print(self.logo.center.x)
 //        print(self.logoocal.center.x)
+        
+        self.loginPosition = self.button.center
+        self.button.center.x -= self.view.bounds.width
+        
+        self.view.addSubview(self.warningMessage)
+        self.warningMessage.hidden = true
+        self.warningMessage.center = self.loginPosition
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +94,15 @@ class ViewController: UIViewController {
         //初始化logo
         self.logo.center.x -= self.view.bounds.width
         self.logoocal.center.x -= self.view.bounds.width
+        
+        //初始化输入框
+        
+        self.user.center.x -= self.view.bounds.width
+        self.password.center.x -= self.view.bounds.width
+        //初始化button
+        self.button.center.x -= self.view.bounds.width
+
+
         
         UIView.animateWithDuration(5, delay: 0, options: [], animations: {
             self.bubble1.transform = CGAffineTransformMakeScale(1.0, 1.0)
@@ -121,7 +165,7 @@ class ViewController: UIViewController {
             
             }, completion: nil )
         
-        
+        //logo动画
         UIView.animateWithDuration(0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: {
             self.logo.center.x += self.view.bounds.width
             }, completion: nil)
@@ -129,6 +173,65 @@ class ViewController: UIViewController {
         UIView.animateWithDuration(1, delay: 0.4, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
             self.logoocal.center.x += self.view.bounds.width
             }, completion: nil)
+        
+        //输入框动画
+        
+        UIView.animateWithDuration(0.2, delay: 0.3, options: .CurveEaseOut, animations: {
+            self.user.center.x += self.view.bounds.width
+            
+            }, completion: nil )
+        
+        UIView.animateWithDuration(0.2, delay: 0.35, options: .CurveEaseOut, animations: {
+            self.password.center.x += self.view.bounds.width
+            
+            }, completion: nil )
+        
+        
+        
+        //button动画
+        UIView.animateWithDuration(0.2, delay: 0.4, options: .CurveEaseOut, animations: {
+            self.button.center.x += self.view.bounds.width
+            
+            }, completion: nil )
+        
+        
+    }
+    @IBAction func btnselected(sender: AnyObject) {
+        
+        
+        self.button.addSubview(self.spinner)
+        self.spinner.frame.origin = CGPointMake(47, 9)
+        self.spinner.frame.size = CGSizeMake(20, 20)
+        self.spinner.startAnimating()
+        
+        UIView.transitionWithView(self.warningMessage,
+            duration: 0.3,
+            options: .TransitionFlipFromTop,
+            animations: {
+                self.warningMessage.hidden = true
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.button.center = self.loginPosition
+            }, completion: { _ in
+                self.button.center.x -= 30
+                UIView.animateWithDuration(1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+                    self.button.center.x += 30
+                    }, completion: {finished in
+                        UIView.animateWithDuration(0.3, animations: {
+                            self.button.center.y += 60
+                            self.spinner.removeFromSuperview()
+                            }, completion: { _ in
+                                UIView.transitionWithView(self.warningMessage,
+                                    duration: 0.3,
+                                    options: [.TransitionFlipFromTop, .CurveEaseOut],
+                                    animations: {
+                                        self.warningMessage.hidden = false
+                                    }, completion: nil)
+                        })
+                })
+        })
+
         
         
     }

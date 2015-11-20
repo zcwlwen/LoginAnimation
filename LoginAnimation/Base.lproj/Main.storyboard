@@ -53,6 +53,26 @@
                                 <rect key="frame" x="32" y="120" width="257" height="30"/>
                                 <animations/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" background="Text Field" translatesAutoresizingMaskIntoConstraints="NO" id="EzB-s7-Y2P">
+                                <rect key="frame" x="32" y="224" width="257" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" background="Text Field" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-ab-gV7">
+                                <rect key="frame" x="32" y="276" width="257" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlr-Iv-LsK">
+                                <rect key="frame" x="32" y="353" width="257" height="41"/>
+                                <animations/>
+                                <state key="normal" title="Login" backgroundImage="button"/>
+                                <connections>
+                                    <action selector="btnselected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Vx-DP-WgG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -65,8 +85,11 @@
                         <outlet property="bubble4" destination="h6S-3b-HLg" id="big-le-bHs"/>
                         <outlet property="bubble5" destination="frg-pT-Avf" id="txJ-D8-cYV"/>
                         <outlet property="bubble6" destination="md5-Fg-uCF" id="rNo-LS-WmE"/>
+                        <outlet property="button" destination="Vlr-Iv-LsK" id="O6x-4a-vXa"/>
                         <outlet property="logo" destination="73p-8i-d7f" id="o06-nX-TwJ"/>
                         <outlet property="logoocal" destination="yOo-Za-GhT" id="HfI-fy-bfv"/>
+                        <outlet property="password" destination="t4Z-ab-gV7" id="wt4-SM-yWg"/>
+                        <outlet property="user" destination="EzB-s7-Y2P" id="Stl-Gu-oYV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,10 +101,12 @@
         <image name="AnimationHub" width="257" height="30"/>
         <image name="Background" width="320" height="568"/>
         <image name="Oval 11" width="6" height="6"/>
+        <image name="Text Field" width="257" height="31"/>
         <image name="bubble1" width="196" height="202"/>
         <image name="bubble2" width="170" height="174"/>
         <image name="bubble3" width="156" height="156"/>
         <image name="bubble4" width="205" height="253"/>
         <image name="bubble5" width="174" height="157"/>
+        <image name="button" width="257" height="44"/>
     </resources>
 </document>
